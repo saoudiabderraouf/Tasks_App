@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:background="@color/gray">
+    
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="0dp"
+            android:background="@drawable/row_dash_icon"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="6dp"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="0dp"
+            android:background="@drawable/row_dash_icon"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"/>
+
+        <ImageView
+            android:id="@+id/iv_task"
+            android:layout_width="25dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/row_later_icon"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="0dp"
+            android:background="@drawable/row_dash_icon"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="0dp"
+            android:background="@drawable/row_dash_icon"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_Task_Time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="9:00"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_Task_Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:text="Send the documents to the client"
+        android:textSize="16dp"
+        android:textColor="#6369B2"
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/background_home_tasks"/>
+
+
+</LinearLayout>

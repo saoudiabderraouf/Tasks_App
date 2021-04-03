@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background_blue_white_home"
+        android:weightSum="14">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:weightSum="5"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/profile_pic"
+                android:layout_marginRight="10dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FouFa"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You have total 5 tasks today"
+                    android:textSize="16dp"
+                    android:textColor="#959CB1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="My projects"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="26dp"
+                android:layout_alignParentLeft="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="..."
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="26dp"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:layout_gravity="center"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Statistics"
+                android:textColor="#201E41"
+                android:textStyle="bold"
+                android:textSize="26dp"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="..."
+                android:textColor="#201E41"
+                android:textStyle="bold"
+                android:textSize="26dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_margin="20dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/stat"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="My tasks"
+                android:textColor="#201E41"
+                android:textStyle="bold"
+                android:textSize="26dp"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="..."
+                android:textColor="#201E41"
+                android:textStyle="bold"
+                android:textSize="26dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_marginHorizontal="20dp"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="5">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/row_dash_icon"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/row_dash_icon"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="6dp"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/row_later_icon"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="6dp"/>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/row_dash_icon"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="6dp"/>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/row_dash_icon"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="6dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="9:00"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:layout_marginVertical="5dp"
+                android:text="Send the documents to the client"
+                android:textSize="16dp"
+                android:padding="16dp"
+                android:textColor="#6369B2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/background_home_tasks"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.75"></LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>
