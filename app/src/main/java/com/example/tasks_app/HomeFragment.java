@@ -1,5 +1,6 @@
 package com.example.tasks_app;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,6 +30,17 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView =  view.findViewById(R.id.recycler_view_tasks);
 
+        ArrayList<Task> tasks = getTasks();
+
+        CustomAdapter adapter = new CustomAdapter(tasks,getContext());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+
+        return view;
+    }
+
+    public ArrayList<Task> getTasks(){
         ArrayList<Task> tasks = new ArrayList<>();
         Task task = new Task("12 tasks", "Web Development");
         tasks.add(task);
@@ -40,17 +53,13 @@ public class HomeFragment extends Fragment {
         Task task4 = new Task("10 tasks","Freelancing");
         tasks.add(task4);
 
-        CustomAdapter adapter = new CustomAdapter(tasks);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(layoutManager);
-
-        return view;
+        return tasks;
     }
 
     public static class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
         private ArrayList<Task> localDataSet;
+        private Context context;
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
             private final TextView textViewTasksNumber;
@@ -73,8 +82,9 @@ public class HomeFragment extends Fragment {
             }
         }
 
-        public CustomAdapter(ArrayList<Task> dataSet) {
-            localDataSet = dataSet;
+        public CustomAdapter(ArrayList<Task> localDataSet, Context context) {
+            this.localDataSet = localDataSet;
+            this.context = context;
         }
 
         // Create new views (invoked by the layout manager)
@@ -95,6 +105,9 @@ public class HomeFragment extends Fragment {
             // contents of the view with that element
             viewHolder.getTasksNumber().setText(localDataSet.get(position).taskNumber);
             viewHolder.getTasksTitle().setText(localDataSet.get(position).taskTitle);
+
+            viewHolder.itemView.clearAnimation();
+            viewHolder.itemView.setAnimation(AnimationUtils.loadAnimation(context,R.anim.home_fragment_tasks_animation));
         }
 
         // Return the size of your dataset (invoked by the layout manager)

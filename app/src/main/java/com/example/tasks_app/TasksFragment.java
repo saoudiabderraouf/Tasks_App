@@ -1,8 +1,6 @@
 package com.example.tasks_app;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -13,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -173,11 +172,13 @@ public class TasksFragment extends Fragment {
             }else if (localDataSet.get(position).done == 1){
                 viewHolder.getTasksImage().setImageDrawable(ContextCompat.getDrawable(context,R.drawable.row_later_icon));
             }
-            else {
+            else if (localDataSet.get(position).done == 2){
                 viewHolder.getTasksImage().setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_row_night_icon));
                 viewHolder.getIv_3().setVisibility(View.INVISIBLE);
                 viewHolder.getIv_4().setVisibility(View.INVISIBLE);
             }
+            viewHolder.itemView.clearAnimation();
+            viewHolder.itemView.setAnimation(AnimationUtils.loadAnimation(context,R.anim.tasks_fragment_tasks_animation));
         }
 
         // Return the size of your dataset (invoked by the layout manager)
@@ -259,6 +260,9 @@ public class TasksFragment extends Fragment {
             }
             viewHolder.getDaysNumber().setText(localDataSet.get(position).dayNumber);
             viewHolder.getDayTitle().setText(localDataSet.get(position).dayName);
+
+            viewHolder.itemView.clearAnimation();
+            viewHolder.itemView.setAnimation(AnimationUtils.loadAnimation(context,R.anim.tasks_fragment_days_animation));
         }
 
         // Return the size of your dataset (invoked by the layout manager)
